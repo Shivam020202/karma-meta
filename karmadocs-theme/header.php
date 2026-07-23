@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KarmaDocs | Comprehensive Psychiatric Care in Palm Springs, CA</title>
-    <meta name="description"
-        content="Personalized psychiatric care including TMS therapy, medication management, and talk therapy for depression, anxiety, OCD, PTSD, ADHD, and more.">
+    <?php wp_head(); ?>
+    <title><?php wp_title('|', true, 'right'); ?></title>
+    <meta name="description" content="<?php echo esc_attr(get_bloginfo('description')); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
     <style>
         *,
         *::before,
@@ -69,6 +70,10 @@
             transition: all .35s;
         }
 
+        .logo img {
+            height: 64px;
+            width: auto;
+        }
 
         .loc {
             display: inline-flex;
@@ -666,14 +671,16 @@
     <!-- End Meta Pixel Code -->
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
     <!-- NAV -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#"><img class="logo"
-                    src="https://res.cloudinary.com/de4kw1t2i/image/upload/v1766060387/Karma-Docs-Logo-Horizental_w48ja1.webp"
-                    alt="KarmaDocs" style="height:64px;"></a>
+            <a href="<?php echo esc_url(home_url('/')); ?>">
+                <img class="logo"
+                    src="<?php echo esc_url(get_theme_mod('karmadocs_logo', 'https://res.cloudinary.com/de4kw1t2i/image/upload/v1766060387/Karma-Docs-Logo-Horizental_w48ja1.webp')); ?>"
+                    alt="<?php bloginfo('name'); ?>">
+            </a>
             <div class="loc-desktop">
                 <span class="loc"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -697,247 +704,3 @@
             <a href="#faq-section" class="faq-link">FAQ</a>
         </div>
     </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <video autoplay muted loop playsinline preload="auto">
-            <source src="https://karmadocs.com/wp-content/themes/karmadocs-theme/assets/hero-video.mp4"
-                type="video/mp4">
-        </video>
-
-        <div class="hero-inner">
-            <div class="hero-grid">
-                <!-- Left -->
-                <div class="hero-left">
-                    <div class="badge">
-                        <span class="badge-dot"></span>
-                        Comprehensive Psychiatric Services
-                    </div>
-                    <h1>Compassionate Mental Health <em>Care That Works</em></h1>
-                    <p class="sub">From advanced TMS therapy and medication management to individual counseling, we
-                        offer a full spectrum of psychiatric services tailored to your unique needs. Begin your healing
-                        journey today.</p>
-                    <div class="stats">
-                        <div class="st"><span class="st-num">85%</span><span class="st-label">Success Rate</span></div>
-                        <div class="st"><span class="st-num">10K+</span><span class="st-label">Patients</span></div>
-                        <div class="st"><span class="st-num">4.9</span><span class="st-label">Rating</span></div>
-                        <div class="st"><span class="st-num">5+</span><span class="st-label">Services</span></div>
-                    </div>
-                </div>
-
-                <!-- Right: Form -->
-                <div class="card" style="margin-top:40px;">
-                    <h2>Schedule a Consultation</h2>
-                    <p class="card-sub">We'll reach out within one business day</p>
-
-                    <!-- Replace the existing hero form block with this -->
-                    <div class="card" style="margin-top:40px;">
-                        <h2>Schedule a Consultation</h2>
-                        <p class="card-sub">We'll reach out within one business day</p>
-
-                        <div style="width:100%;overflow:hidden;border-radius:8px;">
-                            <iframe src="https://api.leadconnectorhq.com/widget/form/1cFf5g3NpeWKew0Kddjy"
-                                style="width:100%;height:537px;border:none;border-radius:8px"
-                                id="inline-1cFf5g3NpeWKew0Kddjy" data-layout="{'id':'INLINE'}"
-                                data-trigger-type="alwaysShow" data-trigger-value=""
-                                data-activation-type="alwaysActivated" data-activation-value=""
-                                data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                                data-form-name="KarmaDocs Facebook Ads Form" data-height="537"
-                                data-layout-iframe-id="inline-1cFf5g3NpeWKew0Kddjy" data-form-id="1cFf5g3NpeWKew0Kddjy"
-                                title="KarmaDocs Facebook Ads Form">
-                            </iframe>
-                        </div>
-
-                        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-                    </div>
-
-                    <div id="formSuccess" style="display:none;text-align:center;padding:40px 0;">
-                        <div
-                            style="width:48px;height:48px;background:#dcfce7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;">
-                            <svg style="width:24px;height:24px;color:#22c55e;" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-                        <h3 style="font-size:18px;font-weight:700;color:#1a2b4a;margin-bottom:4px;">Thank You!</h3>
-                        <p style="font-size:14px;color:#6b7280;">We'll be in touch shortly.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section" id="faq-section">
-        <div class="faq-wrap">
-            <div class="faq-title">
-                <h2>Common Questions</h2>
-                <p>Everything you need to know about our psychiatric services</p>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">
-                    <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg></div>
-                    <span>What services does KarmaDocs offer?</span>
-                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="faq-a">
-                    <p>KarmaDocs provides a full spectrum of psychiatric care including TMS therapy, medication
-                        management, and individual talk therapy. We treat depression, anxiety disorders, PTSD, OCD,
-                        women's mood disorders, stress & adjustment disorders, and ADHD with evidence-based,
-                        personalized treatment plans.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">
-                    <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg></div>
-                    <span>Does insurance cover your services?</span>
-                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="faq-a">
-                    <p>Yes. We work with most major insurance providers including Medicare, IEHP, Tricare, Blue Cross
-                        Blue Shield, Aetna, and Cigna. Our team handles all benefit verification and pre-authorization
-                        for TMS, medication management, and therapy services.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">
-                    <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                        </svg></div>
-                    <span>What can I expect from my first visit?</span>
-                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="faq-a">
-                    <p>Your first visit is a comprehensive psychiatric evaluation. Our clinician will review your
-                        medical history, current symptoms, and treatment goals to create a personalized care plan —
-                        whether that involves therapy, medication, TMS, or a combination.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">
-                    <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg></div>
-                    <span>How does medication management work?</span>
-                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="faq-a">
-                    <p>Our board-certified providers prescribe and monitor psychiatric medications as part of a broader
-                        treatment plan. We focus on finding the right medication and dosage with minimal side effects,
-                        checking in regularly to ensure your care stays aligned with your goals.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">
-                    <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg></div>
-                    <span>When should I seek psychiatric care?</span>
-                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="faq-a">
-                    <p>You don't have to wait until things feel unmanageable. If you're struggling with persistent
-                        sadness, anxiety, racing thoughts, difficulty sleeping, trauma symptoms, or any mental health
-                        concern — we're here to help. Early intervention leads to better outcomes.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">
-                    <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                        </svg></div>
-                    <span>What conditions do you treat?</span>
-                    <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div class="faq-a">
-                    <p>KarmaDocs treats depression, anxiety disorders, PTSD, OCD, women's mood disorders, stress &
-                        adjustment disorders, and ADHD. We believe every individual's experience is unique and tailor
-                        every treatment plan accordingly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <img src="https://res.cloudinary.com/de4kw1t2i/image/upload/v1766060387/Karma-Docs-Logo-Horizental_w48ja1.webp"
-                alt="KarmaDocs" style="height:64px;">
-            <p>Comprehensive psychiatric care in Palm Springs, CA — from TMS therapy and medication management to talk
-                therapy for depression, anxiety, and more.</p>
-            <span class="copy">&copy; 2026 KarmaDocs. All rights reserved.</span>
-        </div>
-    </footer>
-
-
-    <!-- Replace the existing bottom script with this -->
-    <script>
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
-
-        function toggleFaq(btn) {
-            const a = btn.closest('.faq-item').querySelector('.faq-a');
-            const ch = btn.querySelector('.chevron');
-            const open = a.classList.contains('open');
-
-            document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
-            document.querySelectorAll('.faq-q .chevron').forEach(x => x.style.transform = 'rotate(0deg)');
-
-            if (!open) {
-                a.classList.add('open');
-                ch.style.transform = 'rotate(180deg)';
-            }
-        }
-    </script>
-    <script>
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
-
-        function toggleFaq(btn) {
-            const a = btn.closest('.faq-item').querySelector('.faq-a');
-            const ch = btn.querySelector('.chevron');
-            const open = a.classList.contains('open');
-            document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
-            document.querySelectorAll('.faq-q .chevron').forEach(x => x.style.transform = 'rotate(0deg)');
-            if (!open) { a.classList.add('open'); ch.style.transform = 'rotate(180deg)'; }
-        }
-
-        const gc = n => (document.cookie.match(new RegExp('(^| )' + n + '=([^;]+)')) || [])[2] || '';
-        document.getElementById('heroForm').addEventListener('submit', function () {
-            document.getElementById('metaFbp').value = gc('_fbp');
-            document.getElementById('metaFbc').value = gc('_fbc');
-            if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'TMS Consultation', content_category: 'Mental Health' });
-        });
-    </script>
-</body>
-
-</html>
